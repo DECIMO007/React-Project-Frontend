@@ -1,0 +1,81 @@
+.App {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #d6f1f1;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {
+    border: black;
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #0a0a0a;
+  }
+  
+  th {
+    background-color: #f8f8f8;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+  }
+  
+ form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+label {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 100;
+  margin-bottom: 0.5rem;
+  color: #e6ecec;
+}
+input,select {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 2px solid #f1efef;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  color: #f8f4f4;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.Delete{
+  background-color: red;
+}
+
+

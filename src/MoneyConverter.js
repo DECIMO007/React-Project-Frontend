@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import "./Component/MoneyConverter.css"
 
 
 class MoneyConverter extends React.Component {
@@ -93,7 +93,7 @@ class MoneyConverter extends React.Component {
             </select>
           </label>
           <br />
-          <h3>TO</h3>
+          <h3>=</h3>
           <label>
             Currency 2:
             <select name="currency2" value={currency2} onChange={this.handleChange}>
@@ -119,6 +119,7 @@ class MoneyConverter extends React.Component {
               <th>Currency 1</th>
               <th>Currency 2</th>
               <th>Converted Value</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -128,7 +129,7 @@ class MoneyConverter extends React.Component {
                 <td>{conversion.currency1}</td>
                 <td>{conversion.currency2}</td>
                 <td>{conversion.convertedValue}</td>
-                <button onClick={() => this.handleDelete(conversion.id)}>Delete</button>
+                <td ><button className="Delete" onClick={() => this.handleDelete(conversion.id)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
