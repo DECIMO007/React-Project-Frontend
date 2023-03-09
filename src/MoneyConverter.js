@@ -58,8 +58,21 @@ class MoneyConverter extends React.Component {
     }
   }
 
+  handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3500/money-converter/${id}`);
+
+      this.setState((prevState) => ({
+        ...prevState,
+        conversions: prevState.conversions.filter((conversion) => conversion.id !== id),
+      }));
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   render() {
-    const { value, currency1, currency2, convertedValue, conversions } = this.state;
+    const { value, currency1, currency2, convertedValue, conversions} = this.state;
 
     return (
       <div className="App">
@@ -75,6 +88,8 @@ class MoneyConverter extends React.Component {
             <select name="currency1" value={currency1} onChange={this.handleChange}>
               <option value="INR">Rupee</option>
               <option value="USD">Dollar</option>
+              <option value="GBP">Pound</option>
+              <option value="UAE">Dirham</option>
             </select>
           </label>
           <br />
@@ -84,10 +99,12 @@ class MoneyConverter extends React.Component {
             <select name="currency2" value={currency2} onChange={this.handleChange}>
               <option value="INR">Rupee</option>
               <option value="USD">Dollar</option>
+              <option value="GBP">Pound</option>
+              <option value="UAE">Dirham</option>
             </select>
           </label>
           <br />
-          <button type="submit">Convert</button>
+           <button type="submit">Convert</button>
         </form>
         {convertedValue && (
           <div>
@@ -111,6 +128,7 @@ class MoneyConverter extends React.Component {
                 <td>{conversion.currency1}</td>
                 <td>{conversion.currency2}</td>
                 <td>{conversion.convertedValue}</td>
+                <button onClick={() => this.handleDelete(conversion.id)}>Delete</button>
               </tr>
             ))}
           </tbody>
