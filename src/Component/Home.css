@@ -1,0 +1,14 @@
+.Home-container {
+    background-color:skyblue ;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Home-content {
+    color: white;
+    font-size: 5em;
+    text-align: center;
+  }

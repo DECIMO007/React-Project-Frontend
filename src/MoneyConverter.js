@@ -76,6 +76,8 @@ class MoneyConverter extends React.Component {
 
     return (
       <div className="App">
+        
+        <div className="Converter">
         <h1>Money Converter</h1>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -111,6 +113,8 @@ class MoneyConverter extends React.Component {
             <p>Converted Value: {convertedValue}</p>
           </div>
         )}
+        </div>
+        <div className="Histroy">
         <h2>Conversion History</h2>
         <table>
           <thead>
@@ -134,6 +138,7 @@ class MoneyConverter extends React.Component {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     );
   }
